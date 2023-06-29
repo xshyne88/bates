@@ -3,21 +3,23 @@ defmodule BatesWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+  end
 
+  pipeline :graphql do
     plug Plug.Parsers,
       parsers: [:urlencoded, :multipart, :json, Absinthe.Plug.Parser],
       pass: ["*/*"],
       json_decoder: Jason
-
-    plug Absinthe.Plug,
-      schema: BatesWeb.Schema
   end
 
-  scope "/api", BatesWeb do
+  scope "/api" do
     pipe_through :api
+    forward("/", Absinthe.Plug, schema: BatesWeb.Schema)
+  end
 
-    forward "/graphiql", Absinthe.Plug.GraphiQL, schema: BatesWeb.Schema
-    forward "/", Absinthe.Plug, schema: BatesWeb.Schema
+  scope "/" do
+    pipe_through :graphql
+    forward "/graphiql", Absinthe.Plug.GraphiQL, schema: BatesWeb.Schema, playground: :advanced
   end
 
   # Enable Swoosh mailbox preview in development

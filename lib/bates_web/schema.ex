@@ -5,9 +5,7 @@ defmodule BatesWeb.Schema do
   # alias BatesWeb.Resolvers
 
   query do
-    field :users, :user do
-      arg(:id, non_null(:id))
-
+    field :users, non_null(:user) do
       resolve(&BatesWeb.Resolvers.Auth.get_user/3)
     end
 

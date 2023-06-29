@@ -33,13 +33,13 @@ defmodule BatesWeb.Endpoint do
   plug Plug.RequestId
   plug Plug.Telemetry, event_prefix: [:phoenix, :endpoint]
 
-  plug Plug.Parsers,
-    parsers: [:urlencoded, :multipart, :json],
-    pass: ["*/*"],
-    json_decoder: Phoenix.json_library()
+  # plug Plug.Parsers,
+  #   parsers: [:urlencoded, :multipart, :json],
+  #   pass: ["*/*"],
+  #   json_decoder: Phoenix.json_library()
 
-  plug Absinthe.Plug,
-    schema: BatesWeb.Schema
+  # plug Absinthe.Plug,
+  #   schema: BatesWeb.Schema
 
   plug Plug.MethodOverride
   plug Plug.Head
