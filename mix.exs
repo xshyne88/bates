@@ -43,7 +43,10 @@ defmodule Bates.MixProject do
       {:jason, "~> 1.2"},
       {:bandit, "~> 1.0.0-pre"},
       {:absinthe, "~> 1.7.0"},
-      {:absinthe_plug, "~> 1.5.8"}
+      {:absinthe_plug, "~> 1.5.8"},
+      {:ash_phoenix, "~> 1.2"},
+      {:ash, "~> 2.10"},
+      {:ash_postgres, "~> 1.3"}
     ]
   end
 

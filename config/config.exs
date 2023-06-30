@@ -32,6 +32,11 @@ config :bates, Bates.Mailer, adapter: Swoosh.Adapters.Local
 
 config :bates, BatesWeb.Endpoint, adapter: Bandit.PhoenixAdapter
 
+config :ash, :use_all_identities_in_manage_relationship?, false
+
+config :bates,
+  ash_apis: [Bates.Auth]
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
