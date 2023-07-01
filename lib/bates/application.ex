@@ -8,6 +8,7 @@ defmodule Bates.Application do
   @impl true
   def start(_type, _args) do
     children = [
+      {AshAuthentication.Supervisor, otp_app: :bates},
       # Start the Telemetry supervisor
       BatesWeb.Telemetry,
       # Start the Ecto repository

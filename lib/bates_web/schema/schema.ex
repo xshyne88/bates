@@ -8,8 +8,6 @@ defmodule BatesWeb.Schema do
   use AshGraphql, apis: @apis
 
   query do
-    # field :stuff, non_null(:user) do
-    # resolve(&BatesWeb.Resolvers.Auth.get_user/3)
     field :stuff, :string do
       fn _, _, _ -> {:ok, "bar"} end
     end

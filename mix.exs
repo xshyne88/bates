@@ -32,9 +32,9 @@ defmodule Bates.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-
       {:absinthe, "~> 1.7.0"},
       {:absinthe_plug, "~> 1.5.8"},
+      {:ash_authentication, "~> 3.11.6"},
       {:ash_phoenix, "~> 1.2"},
       {:ash, "~> 2.10"},
       {:ash_graphql, "~> 0.25.10"},

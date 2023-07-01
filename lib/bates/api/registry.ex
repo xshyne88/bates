@@ -7,5 +7,6 @@ defmodule Bates.Api.Registry do
 
   entries do
     entry Bates.Api.User
+    entry Bates.Api.Token
   end
 end
