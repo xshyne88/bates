@@ -1,17 +1,34 @@
 defmodule BatesWeb.Schema do
   use Absinthe.Schema
-  import_types(BatesWeb.Schema.Types.User)
+  # import_types(BatesWeb.Schema.Types.User)
 
   # alias BatesWeb.Resolvers
+  @apis [Bates.Api]
+
+  use AshGraphql, apis: @apis
 
   query do
-    field :users, non_null(:user) do
-      resolve(&BatesWeb.Resolvers.Auth.get_user/3)
+    # field :stuff, non_null(:user) do
+    # resolve(&BatesWeb.Resolvers.Auth.get_user/3)
+    field :stuff, :string do
+      fn _, _, _ -> {:ok, "bar"} end
     end
+  end
 
-    # @desc "Get all posts"
-    # field :posts, list_of(:post) do
-    #   resolve(&Resolvers.Content.list_posts/3)
-    # end
+  mutation do
+  end
+
+  # @desc "Get all posts"
+  # field :posts, list_of(:post) do
+  #   resolve(&Resolvers.Content.list_posts/3)
+  # end
+  # end
+
+  # def context(ctx) do
+  #   AshGraphql.add_context(ctx)
+  # end
+
+  def plugins() do
+    [Absinthe.Middleware.Dataloader | Absinthe.Plugin.defaults()]
   end
 end

@@ -32,21 +32,23 @@ defmodule Bates.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:phoenix, "~> 1.7.6"},
-      {:phoenix_ecto, "~> 4.4"},
-      {:ecto_sql, "~> 3.10"},
-      {:postgrex, ">= 0.0.0"},
-      {:swoosh, "~> 1.3"},
-      {:finch, "~> 0.13"},
-      {:telemetry_metrics, "~> 0.6"},
-      {:telemetry_poller, "~> 1.0"},
-      {:jason, "~> 1.2"},
-      {:bandit, "~> 1.0.0-pre"},
+
       {:absinthe, "~> 1.7.0"},
       {:absinthe_plug, "~> 1.5.8"},
       {:ash_phoenix, "~> 1.2"},
       {:ash, "~> 2.10"},
-      {:ash_postgres, "~> 1.3"}
+      {:ash_graphql, "~> 0.25.10"},
+      {:ash_postgres, "~> 1.3"},
+      {:bandit, "~> 1.0.0-pre"},
+      {:ecto_sql, "~> 3.10"},
+      {:finch, "~> 0.13"},
+      {:jason, "~> 1.2"},
+      {:phoenix, "~> 1.7.6"},
+      {:phoenix_ecto, "~> 4.4"},
+      {:postgrex, ">= 0.0.0"},
+      {:telemetry_metrics, "~> 0.6"},
+      {:telemetry_poller, "~> 1.0"},
+      {:swoosh, "~> 1.3"}
     ]
   end
 

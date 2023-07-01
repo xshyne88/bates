@@ -1,7 +1,22 @@
 defmodule Bates.Api.User do
   use Ash.Resource,
     # Tells Ash you want this resource to store its data in Postgres.
-    data_layer: AshPostgres.DataLayer
+    data_layer: AshPostgres.DataLayer,
+    extensions: [
+      AshGraphql.Resource
+    ]
+
+  graphql do
+    type :user
+
+    queries do
+      list(:list_users, :read)
+    end
+
+    mutations do
+      create :create_user, :create
+    end
+  end
 
   # The Postgres keyword is specific to the AshPostgres module.
   postgres do
