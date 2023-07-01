@@ -35,7 +35,7 @@ config :bates, BatesWeb.Endpoint, adapter: Bandit.PhoenixAdapter
 config :ash, :use_all_identities_in_manage_relationship?, false
 
 config :bates,
-  ash_apis: [Bates.Auth]
+  ash_apis: [Bates.Api]
 
 # Configures Elixir's Logger
 config :logger, :console,

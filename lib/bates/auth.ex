@@ -1,7 +1,7 @@
-defmodule Bates.Auth do
+defmodule Bates.Api do
   use Ash.Api
 
   resources do
-    registry Bates.Auth.Registry
+    registry Bates.Api.Registry
   end
 end

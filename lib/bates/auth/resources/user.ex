@@ -1,4 +1,4 @@
-defmodule Bates.Auth.User do
+defmodule Bates.Api.User do
   use Ash.Resource,
     # Tells Ash you want this resource to store its data in Postgres.
     data_layer: AshPostgres.DataLayer
@@ -12,7 +12,7 @@ defmodule Bates.Auth.User do
   end
 
   code_interface do
-    define_for Bates.Auth
+    define_for Bates.Api
     define :create, action: :create
     define :read_all, action: :read
     define :update, action: :update

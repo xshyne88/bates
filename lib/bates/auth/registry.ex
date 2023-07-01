@@ -1,4 +1,4 @@
-defmodule Bates.Auth.Registry do
+defmodule Bates.Api.Registry do
   use Ash.Registry,
     extensions: [
       # This extension adds helpful compile time validations
@@ -6,6 +6,6 @@ defmodule Bates.Auth.Registry do
     ]
 
   entries do
-    entry Bates.Auth.User
+    entry Bates.Api.User
   end
 end
