@@ -1,12 +1,12 @@
 [
   import_deps: [
-    :ecto,
-    :phoenix,
     :ash,
+    :ash_authentication,
     :ash_phoenix,
     :ash_postgres,
+    :ecto,
     :ecto_sql,
-    :ash_authentication
+    :phoenix
   ],
   inputs: ["*.{ex,exs}", "{config,lib,test}/**/*.{ex,exs}", "priv/*/seeds.exs"],
   subdirectories: ["priv/*/migrations"]
